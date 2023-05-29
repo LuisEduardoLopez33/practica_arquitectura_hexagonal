@@ -25,4 +25,13 @@ export class TareasRepository implements InterfaceRepository<Tareas> {
     const tareas = tareasR.find();
     return tareas;
   }
+  async getById(id: number): Promise<Tareas> {
+    const tareasR = database.getRepository(Tareas);
+    const tarea = await tareasR.findOneBy({ id });
+    if (tarea === null) {
+      // Manejar el caso en que no se encuentra la entidad
+      throw new Error("La tarea no existe");
+    }
+    return tarea;
+  }
 }
