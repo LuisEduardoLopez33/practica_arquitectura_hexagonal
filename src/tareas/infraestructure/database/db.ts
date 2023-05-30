@@ -6,11 +6,11 @@ import Tareas from "../../domain/Tareas";
 
 export default new DataSource({
   type: "postgres",
-  host: process.env.DB_HOST || "localhost",
-  port: +(process.env.DB_PORT || 5432),
-  username: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  host: "44.211.213.110",
+  port: +5432,
+  username: "luis",
+  password: "luis12345678",
+  database: "tareas_bd",
   entities: [Tareas],
   synchronize: true,
   logging: false,
